@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#0A0A0A" />
+
+  <defs>
+    <linearGradient id="ai-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#16C653" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.3" />
+    </linearGradient>
+  </defs>
+
+  <!-- Technical Circuit Frame -->
+  <rect x="40" y="40" width="720" height="420" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
+  <text x="70" y="75" font-family="'Space Grotesk', monospace" font-size="10" fill="#16C653" letter-spacing="0.2em">AUTONOMOUS PIPELINE // AGENTIC WORKFLOW</text>
+  <text x="590" y="75" font-family="'Space Grotesk', monospace" font-size="10" fill="rgba(255, 255, 255, 0.4)" letter-spacing="0.1em">LATENCY: 18MS</text>
+  <line x1="70" y1="90" x2="730" y2="90" stroke="rgba(255, 255, 255, 0.06)" />
+
+  <!-- Node 1: Ingestion -->
+  <rect x="80" y="180" width="160" height="140" fill="#121212" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+  <circle cx="105" cy="205" r="4" fill="#16C653" />
+  <text x="120" y="210" font-family="'Space Grotesk', monospace" font-size="9" fill="rgba(255, 255, 255, 0.5)">STAGE 01</text>
+  <text x="105" y="240" font-family="'Syne', sans-serif" font-weight="700" font-size="14" fill="#FFFFFF">LEAD INGESTION</text>
+  <text x="105" y="260" font-family="'Space Grotesk', sans-serif" font-size="10" fill="rgba(255, 255, 255, 0.4)">Multi-source webhooks</text>
+  <rect x="105" y="280" width="110" height="20" fill="rgba(22, 198, 83, 0.1)" stroke="#16C653" stroke-width="1" />
+  <text x="160" y="294" font-family="'Space Grotesk', monospace" font-size="9" fill="#16C653" text-anchor="middle">STREAMING</text>
+
+  <!-- Connection 1 -> 2 -->
+  <line x1="240" y1="250" x2="320" y2="250" stroke="#16C653" stroke-width="2" stroke-dasharray="4 4" />
+  <circle cx="280" cy="250" r="3" fill="#16C653" />
+
+  <!-- Node 2: Intelligence Engine (Central) -->
+  <rect x="320" y="140" width="180" height="220" fill="#141414" stroke="#16C653" stroke-width="1.5" />
+  <circle cx="345" cy="170" r="5" fill="#16C653" />
+  <text x="360" y="174" font-family="'Space Grotesk', monospace" font-size="9" fill="#16C653">AI CORE</text>
+  <text x="345" y="210" font-family="'Syne', sans-serif" font-weight="700" font-size="16" fill="#FFFFFF">SCORING &amp;</text>
+  <text x="345" y="230" font-family="'Syne', sans-serif" font-weight="700" font-size="16" fill="#FFFFFF">ENRICHMENT</text>
+  <text x="345" y="255" font-family="'Space Grotesk', sans-serif" font-size="10" fill="rgba(255, 255, 255, 0.5)">LLM classification</text>
+  <text x="345" y="270" font-family="'Space Grotesk', sans-serif" font-size="10" fill="rgba(255, 255, 255, 0.5)">Intent modeling</text>
+
+  <!-- Mini data pulse in node 2 -->
+  <rect x="345" y="295" width="130" height="40" fill="#0A0A0A" stroke="rgba(255, 255, 255, 0.1)" />
+  <text x="355" y="315" font-family="'Space Grotesk', monospace" font-size="9" fill="rgba(255, 255, 255, 0.4)">CONFIDENCE</text>
+  <text x="355" y="328" font-family="'Syne', sans-serif" font-weight="700" font-size="12" fill="#16C653">99.4% ACCURACY</text>
+
+  <!-- Connection 2 -> 3 -->
+  <line x1="500" y1="250" x2="580" y2="250" stroke="#16C653" stroke-width="2" stroke-dasharray="4 4" />
+  <circle cx="540" cy="250" r="3" fill="#16C653" />
+
+  <!-- Node 3: Dispatch & CRM -->
+  <rect x="580" y="180" width="160" height="140" fill="#121212" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+  <circle cx="605" cy="205" r="4" fill="#16C653" />
+  <text x="620" y="210" font-family="'Space Grotesk', monospace" font-size="9" fill="rgba(255, 255, 255, 0.5)">STAGE 03</text>
+  <text x="605" y="240" font-family="'Syne', sans-serif" font-weight="700" font-size="14" fill="#FFFFFF">CRM ROUTING</text>
+  <text x="605" y="260" font-family="'Space Grotesk', sans-serif" font-size="10" fill="rgba(255, 255, 255, 0.4)">Direct sales handoff</text>
+  <rect x="605" y="280" width="110" height="20" fill="rgba(22, 198, 83, 0.1)" stroke="#16C653" stroke-width="1" />
+  <text x="660" y="294" font-family="'Space Grotesk', monospace" font-size="9" fill="#16C653" text-anchor="middle">AUTOMATED</text>
+</svg>

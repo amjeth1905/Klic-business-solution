@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About KLIC | Amjeth A, Founder &amp; Global Team</title>
+  <meta name="description" content="Meet Amjeth A and the multidisciplinary team behind KLIC Business Solution. Bringing strategy, design, technology, and marketing together under one roof for businesses in India, UK, USA, and UAE.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <!-- Inline theme preloader to prevent flash -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('klic-theme');
+      const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      document.documentElement.setAttribute('data-theme', saved || (prefersLight ? 'light' : 'dark'));
+    })();
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       HEADER
+       ======================================================================== -->
+  <header class="header" id="mainHeader">
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="KLIC Business Solution Home">
+        KLIC<span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="work.html" class="nav-link">Work</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" data-cursor="THEME">
+          <span class="theme-icon sun-icon">☼</span>
+          <span class="theme-icon moon-icon">☾</span>
+          <span class="theme-label">LIGHT</span>
+        </button>
+        <a href="contact.html" class="btn-klic-primary" data-cursor="CONNECT →">
+          START A PROJECT
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle Mobile Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MOBILE NAVIGATION OVERLAY
+       ======================================================================== -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link"><span>HOME</span><span class="num">01</span></a>
+      <a href="about.html" class="mobile-nav-link"><span>ABOUT</span><span class="num">02</span></a>
+      <a href="services.html" class="mobile-nav-link"><span>SERVICES</span><span class="num">03</span></a>
+      <a href="work.html" class="mobile-nav-link"><span>WORK</span><span class="num">04</span></a>
+      <a href="contact.html" class="mobile-nav-link"><span>CONTACT</span><span class="num">05</span></a>
+    </div>
+    <div style="margin: 1.5rem 0;">
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon sun-icon">☼</span>
+        <span class="theme-icon moon-icon">☾</span>
+        <span class="theme-label">LIGHT</span>
+      </button>
+    </div>
+    <div class="mobile-contact-info">
+      <p class="label-mono green">MARKETS SERVED</p>
+      <p>INDIA • UNITED KINGDOM • UNITED STATES • UNITED ARAB EMIRATES</p>
+      <p style="margin-top: 0.5rem;"><a href="mailto:klic.business@gmail.com" class="green-accent">klic.business@gmail.com</a></p>
+      <p><a href="tel:+916369770205">+91 63697 70205</a></p>
+    </div>
+  </div>
+
+  <main>
+    <!-- ========================================================================
+         01. ABOUT HERO
+         ======================================================================== -->
+    <section class="section" style="padding-top: calc(var(--header-height) + 4rem);" id="aboutHero">
+      <div class="container">
+        <div class="grid-editorial">
+          <div style="grid-column: span 11;">
+            <p class="label-mono green hero-anim-item" style="margin-bottom: 1.5rem;">ABOUT KLIC BUSINESS SOLUTION</p>
+            <h1 class="headline-hero hero-anim-item" style="margin-bottom: 2rem;">
+              WE BUILD DIGITAL EXPERIENCES THAT MOVE BUSINESSES FORWARD.
+            </h1>
+            <p class="text-editorial-large hero-anim-item">
+              KLIC Business Solution is a digital marketing, creative, technology, and business solutions company helping businesses establish, improve, and scale their digital presence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><div class="section-divider"></div></div>
+
+    <!-- ========================================================================
+         02. ABOUT — WHO WE ARE
+         ======================================================================== -->
+    <section class="section" id="whoWeAre">
+      <div class="container">
+        <div class="grid-editorial">
+          <div style="grid-column: span 5;">
+            <p class="label-mono green reveal-on-scroll">THE PROBLEM WE SOLVE</p>
+            <h2 class="headline-section reveal-on-scroll" style="margin-top: 1rem;">
+              ONE TEAM.<br>
+              MULTIPLE DIGITAL CAPABILITIES.
+            </h2>
+          </div>
+          <div style="grid-column: span 7;">
+            <p class="text-editorial-large reveal-on-scroll" style="color: #E4E4E7; margin-bottom: 1.5rem;">
+              Businesses shouldn't have to coordinate multiple agencies for branding, web development, marketing, content, and digital solutions.
+            </p>
+            <p class="text-editorial reveal-on-scroll" style="margin-bottom: 1.5rem;">
+              KLIC brings these capabilities together under one roof. When creative direction, engineering discipline, and performance marketing collaborate seamlessly, execution accelerates and the message remains unified.
+            </p>
+            <p class="text-editorial reveal-on-scroll">
+              We work with businesses across India, the UK, the US, and the UAE to create practical, creative, and technology-driven solutions that directly compound business value.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         03. ABOUT — MEET THE FOUNDER (AMJETH A)
+         ======================================================================== -->
+    <section class="section founder-section" id="founder">
+      <div class="container">
+        <div class="grid-editorial" style="margin-bottom: 3rem;">
+          <div style="grid-column: span 12;">
+            <p class="label-mono green reveal-on-scroll">LEADERSHIP</p>
+            <h2 class="headline-section reveal-on-scroll" style="margin-top: 0.5rem;">
+              MEET THE FOUNDER
+            </h2>
+            <p class="label-mono reveal-on-scroll" style="color: var(--text-dim); margin-top: 0.5rem;">
+              THE PERSON BEHIND KLIC.
+            </p>
+          </div>
+        </div>
+
+        <div class="founder-grid">
+          <!-- Left: Editorial Founder Portrait -->
+          <div class="founder-portrait-frame reveal-on-scroll" data-cursor="AMJETH A">
+            <img src="assets/team/amjeth-founder.png" alt="Amjeth A — Founder and Digital Growth Strategist" width="600" height="800">
+            <div class="founder-tag-badge">AMJETH A // FOUNDER</div>
+          </div>
+
+          <!-- Right: Professional Biography & Perspective -->
+          <div class="founder-info">
+            <div>
+              <p class="label-mono green">STRATEGY &amp; VISION</p>
+              <h3 class="headline-section" style="font-size: clamp(2rem, 3.2vw, 2.75rem); margin: 0.5rem 0 0.25rem;">
+                AMJETH A
+              </h3>
+              <p class="label-mono" style="color: #D4D4D8; letter-spacing: 0.14em;">
+                FOUNDER &amp; DIGITAL GROWTH STRATEGIST
+              </p>
+            </div>
+
+            <div class="green-line"></div>
+
+            <p class="text-editorial">
+              Amjeth A is a digital marketing professional and entrepreneur focused on helping businesses build stronger digital identities and create meaningful growth opportunities.
+            </p>
+
+            <p class="text-editorial">
+              With experience across digital marketing, lead generation, paid advertising, social media, content, automation, and AI-powered workflows, he brings together creativity and technology to solve real business challenges.
+            </p>
+
+            <p class="text-editorial">
+              Through KLIC Business Solution, his goal is to build a trusted digital partner that businesses can rely on for branding, websites, marketing, content, and growth.
+            </p>
+
+            <blockquote class="founder-quote">
+              "Great digital work isn't just about looking good. It's about creating something that moves the business forward."
+            </blockquote>
+
+            <div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
+              <a href="contact.html" class="btn-klic-primary" data-cursor="CONNECT →">
+                CONNECT WITH AMJETH
+              </a>
+              <a href="mailto:klic.business@gmail.com" class="btn-klic-secondary" data-cursor="EMAIL →">
+                SEND EMAIL
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         04. ABOUT — OUR TEAM (PEOPLE BEHIND THE WORK)
+         ======================================================================== -->
+    <section class="section" id="team">
+      <div class="container">
+        <div class="grid-editorial">
+          <div style="grid-column: span 12;">
+            <p class="label-mono green reveal-on-scroll">COLLABORATION</p>
+            <h2 class="headline-section reveal-on-scroll" style="margin-top: 0.5rem;">
+              PEOPLE BEHIND THE WORK.
+            </h2>
+            <p class="text-editorial-large reveal-on-scroll" style="margin-top: 1.25rem; max-width: 65ch;">
+              Great work happens when different skills, perspectives, and ideas come together. Our team brings together creative, marketing, sales, technology, and development capabilities to deliver complete digital solutions.
+            </p>
+          </div>
+        </div>
+
+        <!-- 6 Dedicated Team Capability Slots (Data-driven, clearly marked editable placeholders) -->
+        <div class="team-grid">
+          <!-- 01 Digital Marketing -->
+          <div class="team-card reveal-on-scroll" data-cursor="TEAM">
+            <div class="team-photo-wrap">
+              <img src="assets/team/team-placeholder.svg" alt="Digital Marketing Lead Placeholder" width="600" height="750" loading="lazy">
+            </div>
+            <div class="team-details">
+              <span class="team-role">DIGITAL MARKETING</span>
+              <h3 class="team-name">LEAD PERFORMANCE STRATEGIST</h3>
+              <p class="team-bio">
+                Specializing in multi-channel paid acquisition, search engine optimization, and conversion tracking across India, UK, US, and UAE markets.
+              </p>
+            </div>
+          </div>
+
+          <!-- 02 Web Design & Development -->
+          <div class="team-card reveal-on-scroll" data-cursor="TEAM">
+            <div class="team-photo-wrap">
+              <img src="assets/team/team-placeholder.svg" alt="Web Design & Development Lead Placeholder" width="600" height="750" loading="lazy">
+            </div>
+            <div class="team-details">
+              <span class="team-role">WEB DESIGN &amp; DEVELOPMENT</span>
+              <h3 class="team-name">SENIOR CREATIVE ENGINEER</h3>
+              <p class="team-bio">
+                Building responsive, accessible, high-performance web applications with modern typography, smooth animation, and clean architecture.
+              </p>
+            </div>
+          </div>
+
+          <!-- 03 Graphic Design -->
+          <div class="team-card reveal-on-scroll" data-cursor="TEAM">
+            <div class="team-photo-wrap">
+              <img src="assets/team/team-placeholder.svg" alt="Graphic Design Lead Placeholder" width="600" height="750" loading="lazy">
+            </div>
+            <div class="team-details">
+              <span class="team-role">GRAPHIC DESIGN</span>
+              <h3 class="team-name">BRAND &amp; VISUAL DESIGNER</h3>
+              <p class="team-bio">
+                Crafting distinct corporate identities, design systems, editorial layouts, and brand assets that command respect and brand affinity.
+              </p>
+            </div>
+          </div>
+
+          <!-- 04 Video & Content -->
+          <div class="team-card reveal-on-scroll" data-cursor="TEAM">
+            <div class="team-photo-wrap">
+              <img src="assets/team/team-placeholder.svg" alt="Video & Content Lead Placeholder" width="600" height="750" loading="lazy">
+            </div>
+            <div class="team-details">
+              <span class="team-role">VIDEO &amp; CONTENT</span>
+              <h3 class="team-name">DIRECTOR OF CONTENT &amp; MOTION</h3>
+              <p class="team-bio">
+                Producing high-retention short-form video, commercial motion graphics, and editorial scripts that translate products into stories.
+              </p>
+            </div>
+          </div>
+
+          <!-- 05 Business Development -->
+          <div class="team-card reveal-on-scroll" data-cursor="TEAM">
+            <div class="team-photo-wrap">
+              <img src="assets/team/team-placeholder.svg" alt="Business Development Lead Placeholder" width="600" height="750" loading="lazy">
+            </div>
+            <div class="team-details">
+              <span class="team-role">BUSINESS DEVELOPMENT</span>
+              <h3 class="team-name">GROWTH &amp; CLIENT PARTNER</h3>
+              <p class="team-bio">
+                Connecting with visionary business owners, aligning commercial goals with digital capabilities, and managing client relationships.
+              </p>
+            </div>
+          </div>
+
+          <!-- 06 AI & Automation -->
+          <div class="team-card reveal-on-scroll" data-cursor="TEAM">
+            <div class="team-photo-wrap">
+              <img src="assets/team/team-placeholder.svg" alt="AI & Automation Lead Placeholder" width="600" height="750" loading="lazy">
+            </div>
+            <div class="team-details">
+              <span class="team-role">AI &amp; AUTOMATION</span>
+              <h3 class="team-name">AUTOMATION ARCHITECT</h3>
+              <p class="team-bio">
+                Deploying autonomous CRM triage workflows, intelligent lead routing pipelines, and automated generative workflows for scale.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><div class="section-divider"></div></div>
+
+    <!-- ========================================================================
+         05. ABOUT — PHILOSOPHY & VALUES
+         ======================================================================== -->
+    <section class="section" id="philosophy">
+      <div class="container">
+        <div class="grid-editorial">
+          <div style="grid-column: span 12;">
+            <p class="label-mono green reveal-on-scroll">CORE PHILOSOPHY</p>
+            <h2 class="headline-huge reveal-on-scroll" style="margin: 1rem 0;">
+              THINK.<br>
+              CREATE.<br>
+              EXECUTE.<br>
+              <span class="green-accent">GROW.</span>
+            </h2>
+            <p class="text-editorial-large reveal-on-scroll" style="margin-top: 1.5rem;">
+              We don't start with templates. We start by understanding the business.
+            </p>
+          </div>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card reveal-on-scroll">
+            <p class="value-num">01</p>
+            <h3>CREATIVITY</h3>
+            <p>Original visual thinking that commands attention in an era saturated by uniformity.</p>
+          </div>
+
+          <div class="value-card reveal-on-scroll">
+            <p class="value-num">02</p>
+            <h3>STRATEGY</h3>
+            <p>Every pixel and sentence serves a calculated commercial and customer purpose.</p>
+          </div>
+
+          <div class="value-card reveal-on-scroll">
+            <p class="value-num">03</p>
+            <h3>INNOVATION</h3>
+            <p>Embracing AI and modern workflows to deliver superior outcomes at accelerated velocity.</p>
+          </div>
+
+          <div class="value-card reveal-on-scroll">
+            <p class="value-num">04</p>
+            <h3>TRANSPARENCY</h3>
+            <p>Clear communication, honest metrics, and straightforward partnership without jargon.</p>
+          </div>
+
+          <div class="value-card reveal-on-scroll">
+            <p class="value-num">05</p>
+            <h3>QUALITY</h3>
+            <p>Uncompromising standards in design, code architecture, and editorial execution.</p>
+          </div>
+
+          <div class="value-card reveal-on-scroll">
+            <p class="value-num">06</p>
+            <h3>GROWTH</h3>
+            <p>Our true benchmark is the sustainable, repeatable commercial expansion of our clients.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><div class="section-divider"></div></div>
+
+    <!-- ========================================================================
+         06. ABOUT — PROCESS (ANIMATED TIMELINE)
+         ======================================================================== -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="grid-editorial" style="margin-bottom: 4rem;">
+          <div style="grid-column: span 12;">
+            <p class="label-mono green reveal-on-scroll">HOW WE WORK</p>
+            <h2 class="headline-section reveal-on-scroll" style="margin-top: 0.5rem;">
+              THE KLIC METHODOLOGY
+            </h2>
+          </div>
+        </div>
+
+        <div class="timeline-process">
+          <div class="timeline-step reveal-on-scroll">
+            <p class="step-num">01 // DISCOVER</p>
+            <h3 class="step-title">DISCOVER</h3>
+            <p class="step-desc">We immerse ourselves in your business model, customer psychology, competition, and growth bottlenecks.</p>
+          </div>
+
+          <div class="timeline-step reveal-on-scroll">
+            <p class="step-num">02 // STRATEGIZE</p>
+            <h3 class="step-title">STRATEGIZE</h3>
+            <p class="step-desc">We formulate a clear blueprint detailing positioning, messaging, digital platforms, and customer acquisition channels.</p>
+          </div>
+
+          <div class="timeline-step reveal-on-scroll">
+            <p class="step-num">03 // CREATE</p>
+            <h3 class="step-title">CREATE</h3>
+            <p class="step-desc">Our creative and technical teams craft bespoke brand identities, web experiences, content assets, and automations.</p>
+          </div>
+
+          <div class="timeline-step reveal-on-scroll">
+            <p class="step-num">04 // LAUNCH</p>
+            <h3 class="step-title">LAUNCH</h3>
+            <p class="step-desc">Precision deployment across web, ad networks, and content channels with thorough quality assurance and analytics setup.</p>
+          </div>
+
+          <div class="timeline-step reveal-on-scroll">
+            <p class="step-num">05 // OPTIMIZE</p>
+            <h3 class="step-title">OPTIMIZE</h3>
+            <p class="step-desc">Continuous experimentation, CRO analysis, A/B testing, and performance tuning based on real user feedback.</p>
+          </div>
+
+          <div class="timeline-step reveal-on-scroll">
+            <p class="step-num">06 // GROW</p>
+            <h3 class="step-title">GROW</h3>
+            <p class="step-desc">Scale budgets, expand markets into India, the UK, the US, and the UAE, and automate workflows for sustained compounding returns.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section-cta-cinematic">
+      <div class="cta-watermark">ABOUT</div>
+      <div class="container" style="position: relative; z-index: 2; text-align: center;">
+        <p class="label-mono green reveal-on-scroll" style="margin-bottom: 1rem;">WORK WITH US</p>
+        <h2 class="headline-huge reveal-on-scroll" style="margin-bottom: 1.5rem;">
+          READY TO PARTNER WITH<br>A SERIOUS DIGITAL TEAM?
+        </h2>
+        <div class="reveal-on-scroll" style="margin-top: 2rem;">
+          <a href="contact.html" class="btn-klic-primary" style="padding: 1.15rem 2.75rem;" data-cursor="START →">
+            START A PROJECT →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="margin-bottom: 0.75rem;">
+            KLIC<span class="logo-dot"></span>
+          </a>
+          <p class="footer-tagline">CREATIVE. STRATEGIC. RESULTS-DRIVEN.</p>
+          <p class="text-editorial" style="font-size: 0.9rem; max-width: 38ch;">
+            Digital growth and business solutions company serving businesses across India, the United Kingdom, the United States, and the United Arab Emirates.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">NAVIGATION</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="work.html">Work</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">SERVICES</h4>
+          <div class="footer-links">
+            <a href="services.html#marketing">Digital Marketing</a>
+            <a href="services.html#web">Website Design &amp; Development</a>
+            <a href="services.html#branding">Branding &amp; Creative Design</a>
+            <a href="services.html#profiles">Company Profile &amp; Portfolio</a>
+            <a href="services.html#content">Video &amp; Content</a>
+            <a href="services.html#ai">AI &amp; Automation</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">CONTACT &amp; MARKETS</h4>
+          <div class="footer-links">
+            <a href="tel:+916369770205">+91 63697 70205</a>
+            <a href="mailto:klic.business@gmail.com">klic.business@gmail.com</a>
+            <p style="margin-top: 1rem; color: var(--text-dim); font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em;">
+              INDIA • UK • USA • UAE
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 KLIC Business Solution. All Rights Reserved.</p>
+        <p>Creative. Strategic. Results-Driven.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/cursor.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

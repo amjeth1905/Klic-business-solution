@@ -1,0 +1,887 @@
+/* ==========================================================================
+   KLIC BUSINESS SOLUTION — COMPONENTS
+   Header, Mobile Nav, Magnetic Buttons, Custom Cursor, Footer, Forms, Timeline
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01. HEADER & NAVIGATION
+   -------------------------------------------------------------------------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  transition: background-color 0.4s var(--ease-editorial), 
+              border-color 0.4s var(--ease-editorial), 
+              height 0.4s var(--ease-editorial),
+              backdrop-filter 0.4s var(--ease-editorial);
+  border-bottom: 1px solid transparent;
+}
+
+.header.scrolled {
+  height: 70px;
+  background-color: var(--header-bg-scrolled);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Brand Logo */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  text-decoration: none;
+  z-index: 1002;
+  transition: color var(--duration-fast);
+}
+
+.logo-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--klic-green);
+  border-radius: 50%;
+}
+
+/* Desktop Nav Links */
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color var(--duration-fast) var(--ease-editorial);
+}
+
+.nav-link:hover {
+  color: var(--text);
+}
+
+.nav-link.active {
+  color: var(--text);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--klic-green);
+  transition: width var(--duration-normal) var(--ease-editorial);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Header Action Group */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.95rem;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-hairline);
+  border-radius: 100px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-editorial);
+  user-select: none;
+}
+
+.theme-toggle:hover {
+  border-color: var(--klic-green);
+  color: var(--klic-green);
+}
+
+.theme-toggle .theme-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+[data-theme="light"] .theme-toggle .sun-icon {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle .moon-icon {
+  display: inline-block;
+}
+
+:root:not([data-theme="light"]) .theme-toggle .moon-icon {
+  display: none;
+}
+
+:root:not([data-theme="light"]) .theme-toggle .sun-icon {
+  display: inline-block;
+}
+
+/* --------------------------------------------------------------------------
+   02. BUTTONS & CTAS
+   -------------------------------------------------------------------------- */
+.btn-klic-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background-color: var(--klic-green);
+  color: #000000;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.65rem;
+  border-radius: 2px;
+  transition: transform var(--duration-fast) var(--ease-editorial),
+              background-color var(--duration-fast) var(--ease-editorial),
+              box-shadow var(--duration-fast) var(--ease-editorial);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-klic-primary:hover {
+  background-color: var(--klic-green-hover);
+  box-shadow: 0 4px 20px rgba(22, 198, 83, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-klic-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background-color: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-medium);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.65rem;
+  border-radius: 2px;
+  transition: border-color var(--duration-fast) var(--ease-editorial),
+              background-color var(--duration-fast) var(--ease-editorial),
+              transform var(--duration-fast) var(--ease-editorial);
+}
+
+.btn-klic-secondary:hover {
+  border-color: var(--text);
+  background-color: var(--klic-green-dim);
+  transform: translateY(-2px);
+}
+
+.btn-klic-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.btn-klic-text span.arrow {
+  color: var(--klic-green);
+  transition: transform var(--duration-fast) var(--ease-editorial);
+}
+
+.btn-klic-text:hover span.arrow {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   03. MOBILE MENU
+   -------------------------------------------------------------------------- */
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 38px;
+  height: 38px;
+  z-index: 1002;
+  cursor: pointer;
+}
+
+.mobile-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text);
+  transition: transform 0.3s var(--ease-editorial), opacity 0.3s, background-color 0.3s;
+}
+
+.mobile-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(var(--header-height) + 2rem) var(--gutter) 3rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition: opacity 0.4s var(--ease-editorial), transform 0.4s var(--ease-editorial), background-color 0.35s;
+}
+
+.mobile-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-hairline);
+  padding-bottom: 0.75rem;
+}
+
+.mobile-nav-link span.num {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--klic-green);
+}
+
+.mobile-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   04. CUSTOM INTERACTIVE CURSOR
+   -------------------------------------------------------------------------- */
+.klic-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--klic-green);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s, transform 0.1s linear;
+}
+
+.klic-cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease-editorial), 
+              height 0.3s var(--ease-editorial), 
+              background-color 0.3s var(--ease-editorial),
+              border-color 0.3s var(--ease-editorial),
+              opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.klic-cursor-follower span.cursor-text {
+  opacity: 0;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #000000;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+/* Expanded state on hover targets */
+.klic-cursor-follower.has-text {
+  width: 120px;
+  height: 120px;
+  background-color: var(--klic-green);
+  border-color: var(--klic-green);
+  box-shadow: 0 0 30px rgba(22, 198, 83, 0.4);
+}
+
+.klic-cursor-follower.has-text span.cursor-text {
+  opacity: 1;
+}
+
+.klic-cursor-follower.hovered {
+  width: 64px;
+  height: 64px;
+  border-color: var(--klic-green);
+  background-color: rgba(22, 198, 83, 0.08);
+}
+
+/* Hide custom cursor on mobile / touch */
+@media (hover: none) and (pointer: coarse) {
+  .klic-cursor-dot,
+  .klic-cursor-follower {
+    display: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   05. EDITORIAL SERVICE ROWS
+   -------------------------------------------------------------------------- */
+.service-row {
+  display: grid;
+  grid-template-columns: 80px 1.5fr 2fr 180px;
+  align-items: baseline;
+  padding: 3rem 0;
+  border-top: 1px solid var(--border-hairline);
+  position: relative;
+  transition: background-color var(--duration-fast) var(--ease-editorial);
+}
+
+.service-row:last-child {
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.service-num {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--klic-green);
+  font-weight: 600;
+}
+
+.service-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  transition: transform var(--duration-fast) var(--ease-editorial), color var(--duration-fast);
+}
+
+.service-row:hover .service-title {
+  transform: translateX(12px);
+  color: var(--klic-green);
+}
+
+.service-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding-right: 2rem;
+}
+
+.service-action {
+  text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   06. EDITORIAL PORTFOLIO GRID & CARDS
+   -------------------------------------------------------------------------- */
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.filter-btn {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.25rem;
+  border: 1px solid var(--border-hairline);
+  border-radius: 100px;
+  color: var(--text-muted);
+  background: var(--bg-surface-elevated);
+  transition: all var(--duration-fast) var(--ease-editorial);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  color: #000000;
+  background: var(--klic-green);
+  border-color: var(--klic-green);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2.5rem;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--border-hairline);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.4s var(--ease-editorial), background-color 0.35s;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  border-color: var(--klic-green-border);
+}
+
+.project-card.span-7 {
+  grid-column: span 7;
+}
+
+.project-card.span-5 {
+  grid-column: span 5;
+}
+
+.project-card.span-6 {
+  grid-column: span 6;
+}
+
+.project-card.span-12 {
+  grid-column: span 12;
+}
+
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--card-bg-elevated);
+}
+
+.project-image-wrapper img,
+.project-image-wrapper svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease-editorial);
+}
+
+.project-card:hover .project-image-wrapper img,
+.project-card:hover .project-image-wrapper svg {
+  transform: scale(1.04);
+}
+
+.project-info {
+  padding: 1.75rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-hairline);
+  transition: background-color 0.35s;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.project-meta .category {
+  color: var(--klic-green);
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: color var(--duration-fast);
+}
+
+.project-card:hover .project-title {
+  color: var(--klic-green);
+}
+
+/* --------------------------------------------------------------------------
+   07. CASE STUDY DETAIL MODAL
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease-editorial);
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: var(--modal-bg);
+  border: 1px solid var(--border-medium);
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  transform: translateY(30px);
+  transition: transform 0.4s var(--ease-editorial), background-color 0.35s;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.modal-backdrop.active .modal-content {
+  transform: translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-hairline);
+  color: var(--text);
+  font-size: 1.25rem;
+  transition: background-color var(--duration-fast), border-color var(--duration-fast);
+}
+
+.modal-close-btn:hover {
+  border-color: var(--klic-green);
+  color: var(--klic-green);
+}
+
+/* --------------------------------------------------------------------------
+   08. FORMS & INPUTS
+   -------------------------------------------------------------------------- */
+.form-klic {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+}
+
+.form-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--border-hairline);
+  border-radius: 2px;
+  padding: 1.1rem 1.25rem;
+  font-size: 1rem;
+  color: var(--text);
+  transition: border-color var(--duration-fast) var(--ease-editorial),
+              background-color var(--duration-fast) var(--ease-editorial);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  border-color: var(--klic-green);
+  background-color: var(--input-bg-focus);
+}
+
+.form-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-select option {
+  background-color: var(--modal-bg);
+  color: var(--text);
+}
+
+.form-status {
+  padding: 1rem;
+  border-radius: 2px;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.form-status.success {
+  display: block;
+  background: rgba(22, 198, 83, 0.1);
+  border: 1px solid var(--klic-green);
+  color: var(--text);
+}
+
+.form-status.error {
+  display: block;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid #EF4444;
+  color: var(--text);
+}
+
+/* --------------------------------------------------------------------------
+   09. EDITORIAL TIMELINE
+   -------------------------------------------------------------------------- */
+.timeline-process {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  position: relative;
+}
+
+.timeline-step {
+  position: relative;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-hairline);
+}
+
+.timeline-step::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--klic-green);
+}
+
+.step-num {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--klic-green);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.step-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.step-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   10. FOOTER
+   -------------------------------------------------------------------------- */
+.footer {
+  background-color: var(--footer-bg);
+  border-top: 1px solid var(--border-hairline);
+  padding: 6rem 0 3rem;
+  position: relative;
+  transition: background-color 0.35s;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 5rem;
+}
+
+.footer-brand h3 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.footer-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  color: var(--klic-green);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.footer-col-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.footer-links a:hover {
+  color: #FFFFFF;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border-hairline);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .service-row {
+    grid-template-columns: 50px 1fr;
+    gap: 1rem;
+  }
+  .service-desc {
+    grid-column: 2 / -1;
+    padding-right: 0;
+  }
+  .service-action {
+    grid-column: 2 / -1;
+    text-align: left;
+    margin-top: 1rem;
+  }
+  .project-card.span-7,
+  .project-card.span-5 {
+    grid-column: span 12;
+  }
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-desktop,
+  .header-actions .btn-klic-primary {
+    display: none;
+  }
+  .mobile-toggle {
+    display: flex;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-card.span-6 {
+    grid-column: span 1;
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+}

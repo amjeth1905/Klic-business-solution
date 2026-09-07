@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KLIC Business Solution | Digital Marketing, Web & Creative Solutions</title>
+  <meta name="description" content="KLIC Business Solution helps businesses across India, the UK, the US, and the UAE grow through digital marketing, website design, branding, creative content, and AI-powered solutions.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="KLIC Business Solution | Creative. Strategic. Results-Driven.">
+  <meta property="og:description" content="Digital growth and creative solutions company serving businesses across India, the UK, the US, and the UAE.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/brand/klic-logo.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <!-- Inline theme preloader to prevent flash -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('klic-theme');
+      const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      document.documentElement.setAttribute('data-theme', saved || (prefersLight ? 'light' : 'dark'));
+    })();
+  </script>
+
+  <!-- GSAP & Lenis Smooth Scroll -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       HEADER
+       ======================================================================== -->
+  <header class="header" id="mainHeader">
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="KLIC Business Solution Home">
+        KLIC<span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="work.html" class="nav-link">Work</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" data-cursor="THEME">
+          <span class="theme-icon sun-icon">☼</span>
+          <span class="theme-icon moon-icon">☾</span>
+          <span class="theme-label">LIGHT</span>
+        </button>
+        <a href="contact.html" class="btn-klic-primary" data-cursor="CONNECT →">
+          START A PROJECT
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle Mobile Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MOBILE NAVIGATION OVERLAY
+       ======================================================================== -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">
+        <span>HOME</span>
+        <span class="num">01</span>
+      </a>
+      <a href="about.html" class="mobile-nav-link">
+        <span>ABOUT</span>
+        <span class="num">02</span>
+      </a>
+      <a href="services.html" class="mobile-nav-link">
+        <span>SERVICES</span>
+        <span class="num">03</span>
+      </a>
+      <a href="work.html" class="mobile-nav-link">
+        <span>WORK</span>
+        <span class="num">04</span>
+      </a>
+      <a href="contact.html" class="mobile-nav-link">
+        <span>CONTACT</span>
+        <span class="num">05</span>
+      </a>
+    </div>
+
+    <div style="margin: 1.5rem 0;">
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon sun-icon">☼</span>
+        <span class="theme-icon moon-icon">☾</span>
+        <span class="theme-label">LIGHT</span>
+      </button>
+    </div>
+
+    <div class="mobile-contact-info">
+      <p class="label-mono green">MARKETS SERVED</p>
+      <p>INDIA • UNITED KINGDOM • UNITED STATES • UNITED ARAB EMIRATES</p>
+      <p style="margin-top: 0.5rem;"><a href="mailto:klic.business@gmail.com" class="green-accent">klic.business@gmail.com</a></p>
+      <p><a href="tel:+916369770205">+91 63697 70205</a></p>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       01. HERO SECTION
+       ======================================================================== -->
+  <main>
+    <section class="hero-home" id="homeHero">
+      <div class="container">
+        <div class="grid-editorial" style="align-items: center;">
+          
+          <div class="hero-content" style="grid-column: span 12; max-width: 1100px;">
+            <h1 class="headline-hero hero-headline hero-anim-item">
+              BUILD YOUR BRAND.<br>
+              <span class="green-text">GROW YOUR BUSINESS.</span>
+            </h1>
+
+            <p class="hero-lead hero-anim-item">
+              KLIC Business Solution helps businesses across India, the UK, the US, and the UAE build stronger brands, better digital experiences, and sustainable growth through strategy, design, technology, marketing, content, and AI.
+            </p>
+
+            <div class="hero-actions hero-anim-item">
+              <a href="contact.html" class="btn-klic-primary" data-cursor="START →">
+                START A PROJECT
+              </a>
+              <a href="work.html" class="btn-klic-secondary" data-cursor="VIEW →">
+                VIEW OUR WORK
+              </a>
+            </div>
+
+            <div class="hero-locations hero-anim-item">
+              <span>INDIA</span>
+              <span class="green-dot" style="width: 4px; height: 4px;"></span>
+              <span>UK</span>
+              <span class="green-dot" style="width: 4px; height: 4px;"></span>
+              <span>USA</span>
+              <span class="green-dot" style="width: 4px; height: 4px;"></span>
+              <span>UAE</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><div class="section-divider"></div></div>
+
+    <!-- ========================================================================
+         02. HOME INTRO SECTION (PROGRESSION SEQUENCE)
+         ======================================================================== -->
+    <section class="section" id="intro">
+      <div class="container">
+        <div class="grid-editorial">
+          <div style="grid-column: span 12;">
+            <p class="label-mono green reveal-on-scroll">APPROACH &amp; VISION</p>
+            <h2 class="headline-huge reveal-on-scroll" style="margin: 1rem 0 2rem;">
+              MORE THAN A DIGITAL AGENCY.<br>
+              YOUR GROWTH PARTNER.
+            </h2>
+            <p class="text-editorial-large reveal-on-scroll">
+              KLIC brings strategy, creativity, technology, marketing, content, and AI together to help businesses establish a stronger digital presence and create meaningful growth.
+            </p>
+          </div>
+        </div>
+
+        <!-- Animated Visual Sequence: BRAND -> WEBSITE -> CONTENT -> MARKETING -> GROWTH -->
+        <div class="intro-progression-wrapper">
+          <div class="progression-step" data-cursor="STAGE 01">
+            <span class="step-index">01 // IDENTITY</span>
+            <h3 class="step-name">BRAND</h3>
+            <span class="step-arrow">↓</span>
+          </div>
+
+          <div class="progression-step" data-cursor="STAGE 02">
+            <span class="step-index">02 // PLATFORM</span>
+            <h3 class="step-name">WEBSITE</h3>
+            <span class="step-arrow">↓</span>
+          </div>
+
+          <div class="progression-step" data-cursor="STAGE 03">
+            <span class="step-index">03 // STORY</span>
+            <h3 class="step-name">CONTENT</h3>
+            <span class="step-arrow">↓</span>
+          </div>
+
+          <div class="progression-step" data-cursor="STAGE 04">
+            <span class="step-index">04 // OUTREACH</span>
+            <h3 class="step-name">MARKETING</h3>
+            <span class="step-arrow">↓</span>
+          </div>
+
+          <div class="progression-step" data-cursor="STAGE 05">
+            <span class="step-index">05 // SCALE</span>
+            <h3 class="step-name">GROWTH</h3>
+            <span class="step-arrow green-accent">✓</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><div class="section-divider"></div></div>
+
+    <!-- ========================================================================
+         03. HOME SERVICES (EDITORIAL LAYOUT)
+         ======================================================================== -->
+    <section class="section" id="servicesOverview">
+      <div class="container">
+        <div class="grid-editorial" style="margin-bottom: 4rem;">
+          <div style="grid-column: span 8;">
+            <p class="label-mono green reveal-on-scroll">CORE CAPABILITIES</p>
+            <h2 class="headline-section reveal-on-scroll" style="margin-top: 0.75rem;">
+              EVERYTHING YOU NEED<br>TO BUILD AND GROW.
+            </h2>
+          </div>
+          <div style="grid-column: span 4; display: flex; align-items: flex-end; justify-content: flex-end;">
+            <a href="services.html" class="btn-klic-text" data-cursor="EXPLORE →">
+              VIEW ALL CAPABILITIES <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="services-list-container">
+          <!-- 01 DIGITAL MARKETING -->
+          <div class="service-row" data-cursor="DISCOVER →">
+            <span class="service-num">01</span>
+            <h3 class="service-title">DIGITAL MARKETING</h3>
+            <p class="service-desc">
+              Turn attention into qualified opportunity through strategic search, Meta advertising, Google ads, data-driven lead generation, and performance marketing architecture.
+            </p>
+            <div class="service-action">
+              <a href="services.html#marketing" class="btn-klic-text">LEARN MORE <span class="arrow">→</span></a>
+            </div>
+          </div>
+
+          <!-- 02 WEBSITE DESIGN & DEVELOPMENT -->
+          <div class="service-row" data-cursor="DISCOVER →">
+            <span class="service-num">02</span>
+            <h3 class="service-title">WEBSITE DESIGN &amp; DEVELOPMENT</h3>
+            <p class="service-desc">
+              Your website is your digital home. High-performance corporate websites, UI/UX architecture, responsive custom development, and conversion-focused digital flagships.
+            </p>
+            <div class="service-action">
+              <a href="services.html#web" class="btn-klic-text">LEARN MORE <span class="arrow">→</span></a>
+            </div>
+          </div>
+
+          <!-- 03 BRANDING & CREATIVE DESIGN -->
+          <div class="service-row" data-cursor="DISCOVER →">
+            <span class="service-num">03</span>
+            <h3 class="service-title">BRANDING &amp; CREATIVE DESIGN</h3>
+            <p class="service-desc">
+              Make your business recognizable and memorable. Distinctive visual identities, bespoke brand typography, comprehensive guidelines, and marketing collateral.
+            </p>
+            <div class="service-action">
+              <a href="services.html#branding" class="btn-klic-text">LEARN MORE <span class="arrow">→</span></a>
+            </div>
+          </div>
+
+          <!-- 04 COMPANY PROFILE & PORTFOLIO DESIGN -->
+          <div class="service-row" data-cursor="DISCOVER →">
+            <span class="service-num">04</span>
+            <h3 class="service-title">COMPANY PROFILE &amp; PORTFOLIO</h3>
+            <p class="service-desc">
+              Look professional and communicate with undeniable authority. Editorial corporate monographs, investor pitch decks, business proposals, and sales portfolios.
+            </p>
+            <div class="service-action">
+              <a href="services.html#profiles" class="btn-klic-text">LEARN MORE <span class="arrow">→</span></a>
+            </div>
+          </div>
+
+          <!-- 05 VIDEO & CONTENT -->
+          <div class="service-row" data-cursor="DISCOVER →">
+            <span class="service-num">05</span>
+            <h3 class="service-title">VIDEO &amp; CONTENT</h3>
+            <p class="service-desc">
+              Content that gets noticed. Cinematic brand commercials, high-engagement short-form reels, motion graphics, and narrative-driven social storytelling.
+            </p>
+            <div class="service-action">
+              <a href="services.html#content" class="btn-klic-text">LEARN MORE <span class="arrow">→</span></a>
+            </div>
+          </div>
+
+          <!-- 06 AI & AUTOMATION -->
+          <div class="service-row" data-cursor="DISCOVER →">
+            <span class="service-num">06</span>
+            <h3 class="service-title">AI &amp; AUTOMATION</h3>
+            <p class="service-desc">
+              Work smarter and scale faster. Autonomous lead triage pipelines, custom generative workflows, marketing automation, and business process optimization.
+            </p>
+            <div class="service-action">
+              <a href="services.html#ai" class="btn-klic-text">LEARN MORE <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="container"><div class="section-divider"></div></div>
+
+    <!-- ========================================================================
+         04. HOME WHY KLIC (6 PRINCIPLES)
+         ======================================================================== -->
+    <section class="section" id="whyKlic">
+      <div class="container">
+        <p class="label-mono green reveal-on-scroll">THE KLIC PHILOSOPHY</p>
+        <h2 class="headline-section reveal-on-scroll" style="margin-top: 0.75rem;">
+          WE DON'T JUST DELIVER PROJECTS.<br>
+          WE BUILD DIGITAL GROWTH.
+        </h2>
+
+        <div class="principles-grid">
+          <!-- 01 STRATEGY FIRST -->
+          <div class="principle-item reveal-on-scroll">
+            <span class="principle-num">01 // FOUNDATION</span>
+            <h3>STRATEGY FIRST</h3>
+            <p>We understand the business, customer motivations, and commercial economics before proposing or creating any digital solution.</p>
+          </div>
+
+          <!-- 02 CREATIVE THINKING -->
+          <div class="principle-item reveal-on-scroll">
+            <span class="principle-num">02 // DISTINCTION</span>
+            <h3>CREATIVE THINKING</h3>
+            <p>We combine strategic rigor with distinctive creative execution that cuts through digital clutter and elevates your market standing.</p>
+          </div>
+
+          <!-- 03 MODERN TECHNOLOGY -->
+          <div class="principle-item reveal-on-scroll">
+            <span class="principle-num">03 // INNOVATION</span>
+            <h3>MODERN TECHNOLOGY</h3>
+            <p>We leverage modern web technologies, AI tools, and autonomous automation workflows where they create genuine, measurable commercial value.</p>
+          </div>
+
+          <!-- 04 ONE DIGITAL PARTNER -->
+          <div class="principle-item reveal-on-scroll">
+            <span class="principle-num">04 // INTEGRATION</span>
+            <h3>ONE DIGITAL PARTNER</h3>
+            <p>Brand design, custom web engineering, performance marketing, content production, and AI workflows seamlessly unified under one roof.</p>
+          </div>
+
+          <!-- 05 RESULTS-FOCUSED -->
+          <div class="principle-item reveal-on-scroll">
+            <span class="principle-num">05 // ACCOUNTABILITY</span>
+            <h3>RESULTS-FOCUSED</h3>
+            <p>Every single deliverable is anchored to a concrete business objective—whether driving inbound customer leads, raising capital, or winning market share.</p>
+          </div>
+
+          <!-- 06 LONG-TERM PARTNERSHIP -->
+          <div class="principle-item reveal-on-scroll">
+            <span class="principle-num">06 // EVOLUTION</span>
+            <h3>LONG-TERM PARTNERSHIP</h3>
+            <p>We do not disappear post-launch. We operate as an agile extension of your executive and marketing leadership for continuous growth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="container"><div class="section-divider"></div></div>
+
+    <!-- ========================================================================
+         05. HOME WORK PREVIEW (SELECTED WORK)
+         ======================================================================== -->
+    <section class="section" id="workPreview">
+      <div class="container">
+        <div class="grid-editorial" style="margin-bottom: 3.5rem;">
+          <div style="grid-column: span 8;">
+            <p class="label-mono green reveal-on-scroll">PORTFOLIO</p>
+            <h2 class="headline-section reveal-on-scroll" style="margin-top: 0.75rem;">
+              SELECTED WORK
+            </h2>
+          </div>
+          <div style="grid-column: span 4; display: flex; align-items: flex-end; justify-content: flex-end;">
+            <a href="work.html" class="btn-klic-text" data-cursor="VIEW ALL →">
+              VIEW FULL PORTFOLIO <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="portfolio-grid">
+          <!-- Project 01: Arc Structure -->
+          <div class="project-card span-7 reveal-on-scroll" data-project-id="arc-structure" data-cursor="VIEW PROJECT →">
+            <div class="project-image-wrapper">
+              <img src="assets/work/project-website.jpg" alt="Arc Structure Digital Architecture Platform" width="800" height="500" loading="lazy">
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="category">WEBSITE &amp; UI/UX</span>
+                <span>GLOBAL</span>
+              </div>
+              <h3 class="project-title">
+                Arc Structure Studio Platform
+                <span>↗</span>
+              </h3>
+            </div>
+          </div>
+
+          <!-- Project 02: Aurora & Co. -->
+          <div class="project-card span-5 reveal-on-scroll" data-project-id="aurora-co" data-cursor="VIEW PROJECT →">
+            <div class="project-image-wrapper">
+              <img src="assets/work/project-branding.jpg" alt="Aurora & Co. Brand Identity" width="800" height="500" loading="lazy">
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="category">BRAND IDENTITY</span>
+                <span>UK &amp; SCANDINAVIA</span>
+              </div>
+              <h3 class="project-title">
+                Aurora &amp; Co. Advisory
+                <span>↗</span>
+              </h3>
+            </div>
+          </div>
+
+          <!-- Project 03: Vortex Performance -->
+          <div class="project-card span-6 reveal-on-scroll" data-project-id="vortex-performance" data-cursor="VIEW PROJECT →">
+            <div class="project-image-wrapper">
+              <img src="assets/work/project-marketing.svg" alt="Vortex Global Performance Lead Engine" width="800" height="500" loading="lazy">
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="category">DIGITAL MARKETING</span>
+                <span>UNITED STATES</span>
+              </div>
+              <h3 class="project-title">
+                Vortex Performance Engine
+                <span>↗</span>
+              </h3>
+            </div>
+          </div>
+
+          <!-- Project 04: Capital Partners Folio -->
+          <div class="project-card span-6 reveal-on-scroll" data-project-id="capital-folio" data-cursor="VIEW PROJECT →">
+            <div class="project-image-wrapper">
+              <img src="assets/work/project-profile.svg" alt="Capital Partners Monograph" width="800" height="500" loading="lazy">
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="category">COMPANY PROFILE</span>
+                <span>INDIA &amp; UK</span>
+              </div>
+              <h3 class="project-title">
+                Capital Partners Monograph
+                <span>↗</span>
+              </h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         07. HOME FINAL CINEMATIC CTA
+         ======================================================================== -->
+    <section class="section-cta-cinematic" id="ctaSection">
+      <div class="cta-watermark">KLIC</div>
+      <div class="container" style="position: relative; z-index: 2; text-align: center;">
+        <p class="label-mono green reveal-on-scroll" style="margin-bottom: 1.5rem;">START A CONVERSATION</p>
+        <h2 class="headline-huge reveal-on-scroll" style="margin-bottom: 1.5rem;">
+          HAVE AN IDEA?<br>
+          <span class="green-text">LET'S BUILD IT.</span>
+        </h2>
+        <p class="text-editorial reveal-on-scroll" style="margin: 0 auto 3.5rem; text-align: center;">
+          Tell us what you're building, where you want to go, and what you're trying to achieve. Our strategy team is ready to collaborate.
+        </p>
+        <div class="reveal-on-scroll">
+          <a href="contact.html" class="btn-klic-primary" style="padding: 1.15rem 2.75rem; font-size: 0.95rem;" data-cursor="START A PROJECT →">
+            START A PROJECT →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       MODAL: CASE STUDY DETAIL DRAWER
+       ======================================================================== -->
+  <div class="modal-backdrop" id="projectModal" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="modal-close-btn" aria-label="Close Case Study Modal">&times;</button>
+      <p class="label-mono green" style="margin-bottom: 0.75rem;">CASE STUDY DETAILS</p>
+      <h2 class="headline-section modal-title" style="margin-bottom: 2rem;">Project Overview</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; padding: 1.5rem 0; border-top: 1px solid var(--border-hairline); border-bottom: 1px solid var(--border-hairline); margin-bottom: 2.5rem;">
+        <div>
+          <span class="label-mono">CLIENT</span>
+          <p class="modal-client" style="color: #FFFFFF; font-weight: 600; margin-top: 0.25rem;">—</p>
+        </div>
+        <div>
+          <span class="label-mono">INDUSTRY</span>
+          <p class="modal-industry" style="color: #FFFFFF; font-weight: 600; margin-top: 0.25rem;">—</p>
+        </div>
+        <div>
+          <span class="label-mono">SERVICES PROVIDED</span>
+          <p class="modal-services" style="color: #FFFFFF; font-weight: 600; margin-top: 0.25rem;">—</p>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 2rem;">
+        <div>
+          <h4 style="font-size: 1.15rem; color: #FFFFFF; margin-bottom: 0.5rem;">THE CHALLENGE</h4>
+          <p class="modal-challenge text-editorial" style="font-size: 1rem;">—</p>
+        </div>
+        <div>
+          <h4 style="font-size: 1.15rem; color: #FFFFFF; margin-bottom: 0.5rem;">THE APPROACH</h4>
+          <p class="modal-approach text-editorial" style="font-size: 1rem;">—</p>
+        </div>
+        <div>
+          <h4 style="font-size: 1.15rem; color: #FFFFFF; margin-bottom: 0.5rem;">THE SOLUTION</h4>
+          <p class="modal-solution text-editorial" style="font-size: 1rem;">—</p>
+        </div>
+        <div style="padding: 1.5rem; background: #121212; border-left: 2px solid var(--klic-green);">
+          <h4 style="font-size: 1.15rem; color: #FFFFFF; margin-bottom: 0.5rem;">THE OUTCOME</h4>
+          <p class="modal-outcome text-editorial" style="font-size: 1rem; color: #E4E4E7;">—</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Col 1: Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="margin-bottom: 0.75rem;">
+            KLIC<span class="logo-dot"></span>
+          </a>
+          <p class="footer-tagline">CREATIVE. STRATEGIC. RESULTS-DRIVEN.</p>
+          <p class="text-editorial" style="font-size: 0.9rem; max-width: 38ch;">
+            Digital growth and business solutions company serving businesses across India, the United Kingdom, the United States, and the United Arab Emirates.
+          </p>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h4 class="footer-col-title">NAVIGATION</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="work.html">Work</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <h4 class="footer-col-title">SERVICES</h4>
+          <div class="footer-links">
+            <a href="services.html#marketing">Digital Marketing</a>
+            <a href="services.html#web">Website Design &amp; Development</a>
+            <a href="services.html#branding">Branding &amp; Creative Design</a>
+            <a href="services.html#profiles">Company Profile &amp; Portfolio</a>
+            <a href="services.html#content">Video &amp; Content</a>
+            <a href="services.html#ai">AI &amp; Automation</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact & Markets -->
+        <div>
+          <h4 class="footer-col-title">CONTACT &amp; MARKETS</h4>
+          <div class="footer-links">
+            <a href="tel:+916369770205">+91 63697 70205</a>
+            <a href="mailto:klic.business@gmail.com">klic.business@gmail.com</a>
+            <p style="margin-top: 1rem; color: var(--text-dim); font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em;">
+              INDIA • UK • USA • UAE
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 KLIC Business Solution. All Rights Reserved.</p>
+        <p>Creative. Strategic. Results-Driven.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/cursor.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

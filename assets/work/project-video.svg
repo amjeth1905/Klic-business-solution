@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#070707" />
+  
+  <!-- Cinematic Viewfinder Reticle -->
+  <rect x="40" y="40" width="720" height="420" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
+  
+  <!-- Aspect Mask 2.39:1 Letterbox Lines -->
+  <rect x="60" y="80" width="680" height="340" fill="#0F0F0F" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+  <line x1="60" y1="130" x2="740" y2="130" stroke="rgba(255, 255, 255, 0.04)" stroke-dasharray="2 4" />
+  <line x1="60" y1="370" x2="740" y2="370" stroke="rgba(255, 255, 255, 0.04)" stroke-dasharray="2 4" />
+
+  <!-- Production Data Overlay -->
+  <text x="80" y="110" font-family="'Space Grotesk', monospace" font-size="10" fill="#16C653" letter-spacing="0.15em">● REC  [24 FPS // 4K PRORES 4444]</text>
+  <text x="630" y="110" font-family="'Space Grotesk', monospace" font-size="10" fill="rgba(255, 255, 255, 0.4)">ISO 800  5600K</text>
+
+  <!-- Center Framing Crosshair -->
+  <circle cx="400" cy="250" r="40" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+  <line x1="380" y1="250" x2="420" y2="250" stroke="#16C653" stroke-width="1.5" />
+  <line x1="400" y1="230" x2="400" y2="270" stroke="#16C653" stroke-width="1.5" />
+
+  <!-- Corner framing brackets -->
+  <path d="M 100 170 V 150 H 130" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1.5" fill="none" />
+  <path d="M 700 170 V 150 H 670" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1.5" fill="none" />
+  <path d="M 100 330 V 350 H 130" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1.5" fill="none" />
+  <path d="M 700 330 V 350 H 670" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1.5" fill="none" />
+
+  <!-- Audio spectrum visual in timeline -->
+  <line x1="80" y1="400" x2="720" y2="400" stroke="rgba(255, 255, 255, 0.1)" />
+  <rect x="80" y="394" width="220" height="12" fill="rgba(22, 198, 83, 0.2)" />
+  <text x="80" y="386" font-family="'Space Grotesk', monospace" font-size="9" fill="rgba(255, 255, 255, 0.4)">SEQUENCE // NARRATIVE COMMERCIAL</text>
+  <text x="640" y="386" font-family="'Space Grotesk', monospace" font-size="9" fill="#16C653">COLOR GRADED</text>
+</svg>
