@@ -6,8 +6,12 @@
 (function () {
   'use strict';
 
-  // Check if touch device or coarse pointer
-  if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+  // Disable completely on touch devices or screens <= 1024px
+  function isMobileOrTouch() {
+    return window.matchMedia('(hover: none) and (pointer: coarse)').matches || window.innerWidth <= 1024;
+  }
+
+  if (isMobileOrTouch()) {
     return;
   }
 
@@ -35,6 +39,15 @@
 
   // Track mouse coordinates
   window.addEventListener('mousemove', (e) => {
+    if (window.innerWidth <= 1024) {
+      if (isVisible) {
+        dot.style.opacity = '0';
+        follower.style.opacity = '0';
+        isVisible = false;
+      }
+      return;
+    }
+
     mouseX = e.clientX;
     mouseY = e.clientY;
 
@@ -42,6 +55,14 @@
       isVisible = true;
       dot.style.opacity = '1';
       follower.style.opacity = '1';
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth <= 1024 && isVisible) {
+      dot.style.opacity = '0';
+      follower.style.opacity = '0';
+      isVisible = false;
     }
   });
 

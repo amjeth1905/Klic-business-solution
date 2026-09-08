@@ -61,6 +61,14 @@
   --theme-transition: background-color 0.35s var(--ease-editorial), color 0.35s var(--ease-editorial), border-color 0.35s var(--ease-editorial);
 }
 
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+    --gutter: 1.25rem;
+    --section-pad: clamp(3.25rem, 8vw, 5rem);
+  }
+}
+
 /* Light Theme Variables */
 [data-theme="light"] {
   --bg: #FFFFFF;
@@ -140,27 +148,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .headline-hero {
-  font-size: clamp(2.75rem, 7.5vw, 6.5rem);
+  font-size: clamp(1.85rem, 7.5vw, 6.5rem);
   font-weight: 800;
   letter-spacing: -0.04em;
-  line-height: 0.96;
+  line-height: 0.98;
   text-transform: uppercase;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .headline-huge {
-  font-size: clamp(2.25rem, 5.5vw, 4.75rem);
+  font-size: clamp(1.75rem, 5.5vw, 4.75rem);
   font-weight: 800;
   letter-spacing: -0.035em;
-  line-height: 1.02;
+  line-height: 1.05;
   text-transform: uppercase;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .headline-section {
-  font-size: clamp(1.85rem, 4vw, 3.25rem);
+  font-size: clamp(1.5rem, 4vw, 3.25rem);
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.1;
+  line-height: 1.12;
   text-transform: uppercase;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .headline-sub {
@@ -270,6 +284,37 @@ button {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: clamp(1.5rem, 3vw, 3.5rem);
+}
+
+@media (max-width: 768px) {
+  .grid-editorial {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+  .grid-editorial > * {
+    grid-column: span 12 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .grid-editorial > div[style*="justify-content: flex-end"] {
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+}
+
+/* Responsive Form Utilities */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
 }
 
 /* Accent Utilities */

@@ -55,12 +55,13 @@
 .hero-locations {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--text-dim);
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  flex-wrap: wrap;
 }
 
 .hero-visual-container {
@@ -509,19 +510,89 @@
 }
 
 @media (max-width: 768px) {
+  .hero-home {
+    min-height: auto;
+    padding-top: calc(var(--header-height) + 2rem);
+    padding-bottom: 3.5rem;
+  }
+  .hero-lead {
+    margin-bottom: 2rem;
+  }
+  .hero-actions {
+    margin-bottom: 2.5rem;
+    gap: 1rem;
+  }
   .intro-progression-wrapper {
     grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .progression-step {
+    min-height: auto;
+    padding: 1.5rem;
   }
   .principles-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .principle-item {
+    padding: 1.75rem 1.5rem;
   }
   .team-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .team-details {
+    padding: 1.25rem;
   }
   .service-deliverables-list {
     grid-template-columns: 1fr;
   }
+  .service-deep-dive {
+    padding: 3.5rem 0;
+  }
   .contact-steps-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .contact-meta-card {
+    padding: 1.75rem 1.5rem;
+  }
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .value-card {
+    padding: 1.75rem 1.5rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .hero-actions .btn-klic-primary,
+  .hero-actions .btn-klic-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-locations {
+    gap: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  .founder-tag-badge {
+    left: 1rem;
+    bottom: -12px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.68rem;
+  }
+  .cta-watermark {
+    display: none;
   }
 }

@@ -77,18 +77,47 @@
 
     if (!toggle || !overlay) return;
 
+    const closeNav = () => {
+      toggle.classList.remove('active');
+      overlay.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
+    const openNav = () => {
+      toggle.classList.add('active');
+      overlay.classList.add('active');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    };
+
+    toggle.setAttribute('aria-expanded', 'false');
+
     toggle.addEventListener('click', () => {
-      const isOpen = toggle.classList.toggle('active');
-      overlay.classList.toggle('active');
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+      const isOpen = toggle.classList.contains('active');
+      if (isOpen) {
+        closeNav();
+      } else {
+        openNav();
+      }
     });
 
     navLinks.forEach((link) => {
-      link.addEventListener('click', () => {
-        toggle.classList.remove('active');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', closeNav);
+    });
+
+    // Close mobile nav on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) {
+        closeNav();
+      }
+    });
+
+    // Close on window resize back to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && overlay.classList.contains('active')) {
+        closeNav();
+      }
     });
   }
 
@@ -156,65 +185,136 @@
   // 05. Case Study Modal Data & Drawer
   // --------------------------------------------------------------------------
   const caseStudiesData = {
+    'anvaya-reality': {
+      title: 'Anvaya Reality Digital Flagship',
+      client: 'Anvaya Reality',
+      industry: 'Luxury Living & Real Estate Development',
+      services: 'Website Design & Development, UI/UX Architecture, Property Showcase',
+      challenge: 'Anvaya Reality required an immersive, high-performance digital presence to showcase premium residential developments and capture high-intent property investor inquiries.',
+      approach: 'Designed an architectural editorial UI with smooth property galleries, micro-interactions, responsive floor plans, and streamlined consultation lead capture.',
+      solution: 'High-speed custom responsive platform with mobile-first property viewing, virtual walk-through links, and optimized lead triage pipelines.',
+      outcome: 'Substantial increase in qualified property investor inquiries, sub-second page loads, and elevated brand positioning in competitive luxury real estate.'
+    },
+    'true-north': {
+      title: 'True North Marketers Growth Engine',
+      client: 'True North Marketers',
+      industry: 'Performance Marketing & Digital Agency',
+      services: 'Paid Search, Meta Ads Strategy, High-Intent Acquisition Funnels',
+      challenge: 'Scaling targeted acquisition campaigns while driving down Cost Per Lead (CPL) across saturated agency and digital marketing sectors.',
+      approach: 'Engineered high-intent search ad structures, audience segment retargeting, dynamic creative ad variants, and automated lead validation.',
+      solution: 'Cross-platform acquisition engine with end-to-end attribution tracking, CRM webhooks, and conversion-optimized landing pages.',
+      outcome: 'Delivered consistent ROAS expansion, reduced acquisition costs by over 40%, and established a predictable pipeline.'
+    },
+    'kal-constructions': {
+      title: 'KAL Constructions Corporate Monograph',
+      client: 'KAL Constructions',
+      industry: 'Civil Engineering & Commercial Infrastructure',
+      services: 'Company Profile Design, Executive Tender Decks, Brand Monograph',
+      challenge: 'KAL Constructions needed an institutional-grade corporate profile and capability deck to present to enterprise developers, government tenders, and institutional partners.',
+      approach: 'Architected a Swiss-grid editorial publication highlighting landmark infrastructure projects, engineering capabilities, safety standards, and project milestone timelines.',
+      solution: 'Produced a bespoke corporate monograph and interactive digital deck with custom infographic project breakdowns.',
+      outcome: 'Directly supported major commercial infrastructure tender qualifications and established immediate authority with enterprise stakeholders.'
+    },
+    'greymark-agency': {
+      title: 'Greymark Agency Brand Identity System',
+      client: 'Greymark Agency',
+      industry: 'Creative Strategy & Commercial Consultancy',
+      services: 'Brand Identity Design, Typographic Systems, Visual Guidelines, Stationery',
+      challenge: 'Greymark Agency needed a bold, authoritative visual identity that differentiated them in the creative advisory space and positioned them for international clientele.',
+      approach: 'Created a minimalist typographic logo system, high-contrast monochrome aesthetic with purposeful accent highlights, and comprehensive brand usage guidelines.',
+      solution: 'Holistic brand identity suite including digital guidelines, business stationery, client pitch decks, and social media design language.',
+      outcome: 'A unified, distinguished brand presence that justified premium retainer pricing and expanded brand recognition across international markets.'
+    },
+    'atampara': {
+      title: 'Atampara Commercial Campaign & Visual Content',
+      client: 'Atampara',
+      industry: 'Heritage Lifestyle, Retail & Hospitality',
+      services: 'Commercial Video Production, Social Reels, Creative Direction, Product Showcase',
+      challenge: 'Communicating the craftsmanship, experiential depth, and authentic appeal of Atampara to modern digital audiences across social media and digital channels.',
+      approach: 'Directed high-tempo commercial reels, atmospheric cinematic video shorts, and curated lifestyle photography highlighting authentic details.',
+      solution: 'Delivered a full asset library of short-form vertical video reels, promotional launch teasers, and high-retention algorithmic cutdowns.',
+      outcome: 'Over 500,000 organic views across social channels, major surge in engagement, and heightened consumer demand.'
+    },
+    'rv-agarwal': {
+      title: 'RV Agarwal Global Trade Automation',
+      client: 'RV Agarwal Impex',
+      industry: 'International Trade, Import-Export & Supply Chain',
+      services: 'AI Solutions, Inbound Lead Triage, Multi-Market Automation',
+      challenge: 'Managing hundreds of high-volume international trade enquiries across India, Middle East, Europe, and Asia with varying time zones and product specifications.',
+      approach: 'Built an intelligent automated routing pipeline that parses incoming trade RFQs (Requests for Quotation), categorizes trade volume, and instantly sends tailored catalog packets.',
+      solution: 'Autonomous multi-channel enquiry triage system with real-time WhatsApp Business API integration and CRM synchronisation.',
+      outcome: 'Reduced inquiry response latency from 18 hours to under 90 seconds, leading to a substantial increase in verified trade order closures.'
+    },
+    'jss-realestate': {
+      title: 'JSS Real Estate Commercial Platform',
+      client: 'JSS Realestate',
+      industry: 'Commercial & Residential Real Estate',
+      services: 'Custom Web Platform, Listing Search Engine, Lead Generation System',
+      challenge: 'Buyers and commercial tenants faced slow listing search times and cluttered navigation when exploring prime commercial and residential properties.',
+      approach: 'Developed a sleek, high-speed property search interface with category filtering (commercial, retail, residential), instant inquiry buttons, and interactive maps.',
+      solution: 'Responsive, mobile-optimized property catalog with quick enquiry triggers and localized search UX.',
+      outcome: 'Doubled on-site inquiry rate, achieved 70% mobile visitor engagement, and streamlined broker lead assignment.'
+    },
+    // Aliases for backwards compatibility
     'arc-structure': {
-      title: 'Arc Structure Architectural Platform',
-      client: 'Arc Structure Studio',
-      industry: 'Architecture & Built Environment',
-      services: 'Website Design & Development, UI/UX, Custom CMS',
-      challenge: 'The client needed a digital flagship to represent high-profile architectural monographs with seamless editorial typography and instant image responsiveness across global devices.',
-      approach: 'We developed an ultra-minimal, high-contrast digital experience prioritizing whitespace, architectural typography, and sub-100ms asset loading.',
-      solution: 'Custom lightweight headless architecture with high-precision grid layouts, client project portfolios, and responsive viewing filters.',
-      outcome: 'A modern, award-grade digital home recognized for its clarity, speed, and immersive architectural curation.'
+      title: 'Anvaya Reality Digital Flagship',
+      client: 'Anvaya Reality',
+      industry: 'Luxury Living & Real Estate Development',
+      services: 'Website Design & Development, UI/UX Architecture, Property Showcase',
+      challenge: 'Anvaya Reality required an immersive, high-performance digital presence to showcase premium residential developments and capture high-intent property investor inquiries.',
+      approach: 'Designed an architectural editorial UI with smooth property galleries, micro-interactions, responsive floor plans, and streamlined consultation lead capture.',
+      solution: 'High-speed custom responsive platform with mobile-first property viewing, virtual walk-through links, and optimized lead triage pipelines.',
+      outcome: 'Substantial increase in qualified property investor inquiries, sub-second page loads, and elevated brand positioning in competitive luxury real estate.'
     },
     'aurora-co': {
-      title: 'Aurora & Co. Brand Identity',
-      client: 'Aurora & Co. Strategic Advisory',
-      industry: 'Executive Advisory & Luxury Services',
-      services: 'Brand Identity, Typography System, Corporate Stationery',
-      challenge: 'Establishing an undeniable luxury identity for an international executive consultancy without falling into generic corporate tropes.',
-      approach: 'Crafted a bespoke typography hierarchy, tactile matte black stationery systems, and a cohesive digital asset suite.',
-      solution: 'Comprehensive brand guidelines, custom logotype mark, tactile physical collateral specifications, and multi-market presentation templates.',
-      outcome: 'A distinguished, authoritative brand presence trusted by family offices and institutional leaders across Europe and the US.'
+      title: 'Greymark Agency Brand Identity System',
+      client: 'Greymark Agency',
+      industry: 'Creative Strategy & Commercial Consultancy',
+      services: 'Brand Identity Design, Typographic Systems, Visual Guidelines, Stationery',
+      challenge: 'Greymark Agency needed a bold, authoritative visual identity that differentiated them in the creative advisory space and positioned them for international clientele.',
+      approach: 'Created a minimalist typographic logo system, high-contrast monochrome aesthetic with purposeful accent highlights, and comprehensive brand usage guidelines.',
+      solution: 'Holistic brand identity suite including digital guidelines, business stationery, client pitch decks, and social media design language.',
+      outcome: 'A unified, distinguished brand presence that justified premium retainer pricing and expanded brand recognition across international markets.'
     },
     'vortex-performance': {
-      title: 'Vortex Global Lead Generation Engine',
-      client: 'Vortex Technology Partners',
-      industry: 'Enterprise B2B Software',
-      services: 'Digital Marketing, Meta Advertising, Search Engine Marketing, SEO',
-      challenge: 'Fragmented marketing channels resulted in high cost per acquisition and inconsistent pipeline quality across UK and North American markets.',
-      approach: 'Consolidated performance marketing architecture with intent-targeted paid search, strategic LinkedIn retargeting, and high-conversion landing page variants.',
-      solution: 'Multi-touch attribution tracking, weekly creative refreshes, and granular search query sculpting.',
-      outcome: 'Substantial improvement in pipeline velocity, consistent ROAS multiplier, and higher qualification rates for the global sales team.'
+      title: 'True North Marketers Growth Engine',
+      client: 'True North Marketers',
+      industry: 'Performance Marketing & Digital Agency',
+      services: 'Paid Search, Meta Ads Strategy, High-Intent Acquisition Funnels',
+      challenge: 'Scaling targeted acquisition campaigns while driving down Cost Per Lead (CPL) across saturated agency and digital marketing sectors.',
+      approach: 'Engineered high-intent search ad structures, audience segment retargeting, dynamic creative ad variants, and automated lead validation.',
+      solution: 'Cross-platform acquisition engine with end-to-end attribution tracking, CRM webhooks, and conversion-optimized landing pages.',
+      outcome: 'Delivered consistent ROAS expansion, reduced acquisition costs by over 40%, and established a predictable pipeline.'
     },
     'capital-folio': {
-      title: 'Capital Partners Executive Profile',
-      client: 'Apex Capital Consortium',
-      industry: 'Private Equity & Venture',
-      services: 'Company Profile, Monograph Design, Investor Pitch Decks',
-      challenge: 'Presenting multi-sector portfolio performance and governance frameworks in a clear, compelling, and prestigious visual monograph.',
-      approach: 'Engineered a Swiss-grid editorial layout combining bespoke data visualization, elegant typography, and structured investment thesis spreads.',
-      solution: 'Digital and print-ready executive monograph featuring interactive financial tables and executive leadership breakdowns.',
-      outcome: 'Decks praised by institutional LPs for visual discipline, clarity, and authoritative presentation.'
+      title: 'KAL Constructions Corporate Monograph',
+      client: 'KAL Constructions',
+      industry: 'Civil Engineering & Commercial Infrastructure',
+      services: 'Company Profile Design, Executive Tender Decks, Brand Monograph',
+      challenge: 'KAL Constructions needed an institutional-grade corporate profile and capability deck to present to enterprise developers, government tenders, and institutional partners.',
+      approach: 'Architected a Swiss-grid editorial publication highlighting landmark infrastructure projects, engineering capabilities, safety standards, and project milestone timelines.',
+      solution: 'Produced a bespoke corporate monograph and interactive digital deck with custom infographic project breakdowns.',
+      outcome: 'Directly supported major commercial infrastructure tender qualifications and established immediate authority with enterprise stakeholders.'
     },
     'zenith-video': {
-      title: 'Zenith Global Campaign Production',
-      client: 'Zenith Innovations',
-      industry: 'Consumer Technology',
-      services: 'Video & Content Creation, Motion Graphics, Short-Form Reels',
-      challenge: 'Capturing product differentiation in rapid 15–30 second formats while preserving premium cinematic caliber.',
-      approach: 'Storyboards structured around dramatic lighting, macro product reveals, and high-tempo editorial cuts.',
-      solution: 'Full suite of 4K cinematic launch films, localized social cutdowns for India, UK, US, and UAE markets, and motion graphic title sequences.',
-      outcome: 'Enhanced engagement rates across organic and paid channels, establishing strong brand recall.'
+      title: 'Atampara Commercial Campaign & Visual Content',
+      client: 'Atampara',
+      industry: 'Heritage Lifestyle, Retail & Hospitality',
+      services: 'Commercial Video Production, Social Reels, Creative Direction, Product Showcase',
+      challenge: 'Communicating the craftsmanship, experiential depth, and authentic appeal of Atampara to modern digital audiences across social media and digital channels.',
+      approach: 'Directed high-tempo commercial reels, atmospheric cinematic video shorts, and curated lifestyle photography highlighting authentic details.',
+      solution: 'Delivered a full asset library of short-form vertical video reels, promotional launch teasers, and high-retention algorithmic cutdowns.',
+      outcome: 'Over 500,000 organic views across social channels, major surge in engagement, and heightened consumer demand.'
     },
     'nexus-ai': {
-      title: 'Nexus Autonomous CRM Pipeline',
-      client: 'Nexus Global Logistics',
-      industry: 'Supply Chain & Operations',
-      services: 'AI Solutions, Lead Automation, Workflow Optimization',
-      challenge: 'Manual lead sorting and response latency were hurting inbound deal conversions across time zones.',
-      approach: 'Designed an autonomous AI triage workflow parsing inbound company data, scoring purchase intent, and routing immediately into CRM pipelines.',
-      solution: 'Custom LLM-powered lead enrichment with automated calendar scheduling and webhook integration.',
-      outcome: 'Drastic reduction in lead response latency from hours to under 60 seconds, with zero dropped opportunities.'
+      title: 'RV Agarwal Global Trade Automation',
+      client: 'RV Agarwal Impex',
+      industry: 'International Trade, Import-Export & Supply Chain',
+      services: 'AI Solutions, Inbound Lead Triage, Multi-Market Automation',
+      challenge: 'Managing hundreds of high-volume international trade enquiries across India, Middle East, Europe, and Asia with varying time zones and product specifications.',
+      approach: 'Built an intelligent automated routing pipeline that parses incoming trade RFQs (Requests for Quotation), categorizes trade volume, and instantly sends tailored catalog packets.',
+      solution: 'Autonomous multi-channel enquiry triage system with real-time WhatsApp Business API integration and CRM synchronisation.',
+      outcome: 'Reduced inquiry response latency from 18 hours to under 90 seconds, leading to a substantial increase in verified trade order closures.'
     }
   };
 

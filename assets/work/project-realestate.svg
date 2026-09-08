@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#0C0C0C" />
+  
+  <!-- Architectural Editorial Frame -->
+  <rect x="40" y="40" width="720" height="420" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
+  
+  <!-- Blueprint Grid Overlay -->
+  <g stroke="rgba(255, 255, 255, 0.04)" stroke-width="1">
+    <line x1="80" y1="80" x2="80" y2="420" />
+    <line x1="160" y1="80" x2="160" y2="420" />
+    <line x1="240" y1="80" x2="240" y2="420" />
+    <line x1="320" y1="80" x2="320" y2="420" />
+    <line x1="400" y1="80" x2="400" y2="420" />
+    <line x1="480" y1="80" x2="480" y2="420" />
+    <line x1="560" y1="80" x2="560" y2="420" />
+    <line x1="640" y1="80" x2="640" y2="420" />
+    <line x1="720" y1="80" x2="720" y2="420" />
+    
+    <line x1="80" y1="120" x2="720" y2="120" />
+    <line x1="80" y1="180" x2="720" y2="180" />
+    <line x1="80" y1="240" x2="720" y2="240" />
+    <line x1="80" y1="300" x2="720" y2="300" />
+    <line x1="80" y1="360" x2="720" y2="360" />
+    <line x1="80" y1="420" x2="720" y2="420" />
+  </g>
+
+  <!-- Commercial Real Estate Elevation Vector -->
+  <rect x="120" y="150" width="130" height="230" fill="#141414" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" />
+  <rect x="270" y="110" width="160" height="270" fill="#181818" stroke="#16C653" stroke-width="1.5" />
+  <rect x="450" y="180" width="120" height="200" fill="#141414" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" />
+
+  <!-- Window grid matrices -->
+  <g fill="#16C653" opacity="0.75">
+    <rect x="290" y="135" width="24" height="16" />
+    <rect x="330" y="135" width="24" height="16" />
+    <rect x="370" y="135" width="24" height="16" />
+    <rect x="290" y="170" width="24" height="16" />
+    <rect x="330" y="170" width="24" height="16" />
+    <rect x="370" y="170" width="24" height="16" />
+    <rect x="290" y="205" width="24" height="16" />
+    <rect x="330" y="205" width="24" height="16" />
+    <rect x="370" y="205" width="24" height="16" />
+    <rect x="290" y="240" width="24" height="16" fill="rgba(255,255,255,0.4)" />
+    <rect x="330" y="240" width="24" height="16" />
+    <rect x="370" y="240" width="24" height="16" />
+  </g>
+
+  <g fill="rgba(255, 255, 255, 0.12)">
+    <rect x="140" y="175" width="20" height="14" />
+    <rect x="175" y="175" width="20" height="14" />
+    <rect x="210" y="175" width="20" height="14" />
+    <rect x="140" y="205" width="20" height="14" />
+    <rect x="175" y="205" width="20" height="14" />
+    <rect x="210" y="205" width="20" height="14" />
+    <rect x="140" y="235" width="20" height="14" />
+    <rect x="175" y="235" width="20" height="14" />
+    <rect x="210" y="235" width="20" height="14" />
+
+    <rect x="470" y="205" width="20" height="14" />
+    <rect x="505" y="205" width="20" height="14" />
+    <rect x="540" y="205" width="20" height="14" />
+    <rect x="470" y="235" width="20" height="14" />
+    <rect x="505" y="235" width="20" height="14" />
+    <rect x="540" y="235" width="20" height="14" />
+  </g>
+
+  <!-- UI Search & Metric Badge Overlay -->
+  <rect x="510" y="80" width="210" height="85" fill="#0A0A0A" stroke="#16C653" stroke-width="1" />
+  <text x="525" y="105" font-family="'Space Grotesk', monospace" font-size="9" fill="#16C653" letter-spacing="0.14em">PORTAL PLATFORM</text>
+  <text x="525" y="128" font-family="'Syne', sans-serif" font-weight="700" font-size="16" fill="#FFFFFF">JSS REAL ESTATE</text>
+  <text x="525" y="148" font-family="'Space Grotesk', monospace" font-size="9" fill="rgba(255, 255, 255, 0.5)">COMMERCIAL &amp; RESIDENTIAL</text>
+
+  <!-- Status pill -->
+  <rect x="600" y="340" width="120" height="40" fill="#141414" stroke="rgba(255, 255, 255, 0.1)" />
+  <circle cx="620" cy="360" r="4" fill="#16C653" />
+  <text x="632" y="364" font-family="'Space Grotesk', monospace" font-size="9" fill="#FFFFFF">ACTIVE SEARCH</text>
+</svg>
