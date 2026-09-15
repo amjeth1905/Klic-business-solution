@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" fill="none">
+  <!-- KAL Constructions Structural Monogram -->
+  <g transform="translate(15, 12)">
+    <rect x="2" y="2" width="52" height="52" stroke="currentColor" stroke-width="2" opacity="0.3" />
+    <path d="M12 12 L12 44" stroke="currentColor" stroke-width="4.5" stroke-linecap="square" />
+    <path d="M38 12 L20 28 L38 44" stroke="#16C653" stroke-width="4.5" stroke-linecap="square" stroke-linejoin="miter" />
+    <line x1="2" y1="44" x2="54" y2="44" stroke="#16C653" stroke-width="2" />
+  </g>
+  <!-- Typographic Wordmark -->
+  <text x="85" y="42" font-family="'Syne', 'Inter', -apple-system, sans-serif" font-weight="900" font-size="24" fill="currentColor" letter-spacing="0.14em">KAL</text>
+  <text x="86" y="58" font-family="'Space Grotesk', monospace" font-weight="600" font-size="10" fill="#16C653" letter-spacing="0.28em">CONSTRUCTIONS // INFRASTRUCTURE</text>
+</svg>

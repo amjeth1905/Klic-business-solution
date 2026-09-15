@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 80" fill="none">
+  <!-- Atampara Heritage Lifestyle Motif -->
+  <g transform="translate(15, 12)">
+    <circle cx="28" cy="28" r="25" stroke="#16C653" stroke-width="1.5" stroke-dasharray="2 4" />
+    <path d="M28 8 C34 16 44 22 44 28 C44 37 37 44 28 44 C19 44 12 37 12 28 C12 22 22 16 28 8 Z" stroke="currentColor" stroke-width="2" fill="none" opacity="0.9" />
+    <circle cx="28" cy="30" r="4" fill="#16C653" />
+  </g>
+  <!-- Typographic Wordmark -->
+  <text x="85" y="42" font-family="'Syne', 'Inter', -apple-system, sans-serif" font-weight="700" font-size="23" fill="currentColor" letter-spacing="0.22em">ATAMPARA</text>
+  <text x="86" y="58" font-family="'Space Grotesk', monospace" font-weight="600" font-size="9.5" fill="#16C653" letter-spacing="0.32em">HERITAGE // LIFESTYLE &amp; STAY</text>
+</svg>

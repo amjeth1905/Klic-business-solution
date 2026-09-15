@@ -526,6 +526,72 @@
   grid-column: span 12;
 }
 
+/* --------------------------------------------------------------------------
+   CLIENT LOGO STAGE (Replaces generic mockups/photos)
+   -------------------------------------------------------------------------- */
+.client-logo-stage {
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background-color: var(--card-bg-elevated);
+  background-image: radial-gradient(var(--border-hairline) 1px, transparent 1px);
+  background-size: 16px 16px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-hairline);
+  transition: background-color 0.35s var(--ease-editorial);
+}
+
+.client-logo-stage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: transparent;
+  transition: background-color 0.35s;
+}
+
+.project-card:hover .client-logo-stage::before {
+  background: var(--klic-green);
+}
+
+.client-logo-stage .stage-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--klic-green);
+  padding: 0.28rem 0.65rem;
+  background: var(--klic-green-dim);
+  border: 1px solid var(--klic-green-border);
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.client-logo-img {
+  width: 82%;
+  max-width: 270px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+  transition: transform 0.5s var(--ease-editorial), filter 0.35s;
+  color: var(--text);
+}
+
+.project-card:hover .client-logo-img {
+  transform: scale(1.06);
+}
+
+/* Fallback for image wrapper if ever referenced */
 .project-image-wrapper {
   position: relative;
   width: 100%;
@@ -551,10 +617,10 @@
   padding: 1.75rem 2rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
   background: var(--card-bg);
-  border-top: 1px solid var(--border-hairline);
   transition: background-color 0.35s;
+  flex-grow: 1;
 }
 
 .project-meta {
@@ -570,6 +636,11 @@
 
 .project-meta .category {
   color: var(--klic-green);
+  font-weight: 600;
+}
+
+.project-meta .meta-location {
+  color: var(--text-dim);
 }
 
 .project-title {
@@ -581,10 +652,228 @@
   align-items: center;
   justify-content: space-between;
   transition: color var(--duration-fast);
+  margin-bottom: 0.25rem;
 }
 
 .project-card:hover .project-title {
   color: var(--klic-green);
+}
+
+/* --------------------------------------------------------------------------
+   WORK WE HAVE DONE (SCOPE & DELIVERABLES BREAKDOWN)
+   -------------------------------------------------------------------------- */
+.work-done-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  flex-grow: 1;
+}
+
+.work-done-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--klic-green);
+  border-bottom: 1px solid var(--border-hairline);
+  padding-bottom: 0.45rem;
+}
+
+.work-count {
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+}
+
+.work-tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.work-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  padding: 0.3rem 0.65rem;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-hairline);
+  color: var(--text-editorial-lead);
+  border-radius: 2px;
+  transition: border-color var(--duration-fast), background-color var(--duration-fast);
+}
+
+.project-card:hover .work-tag {
+  border-color: var(--border-medium);
+}
+
+.work-deliverables {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.35rem 0 0.85rem;
+  padding: 0;
+}
+
+.work-deliverable-item {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  line-height: 1.45;
+}
+
+.work-check {
+  color: var(--klic-green);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  margin-top: 1px;
+}
+
+.work-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  padding-top: 1.15rem;
+  margin-top: auto;
+  border-top: 1px solid var(--border-hairline);
+}
+
+.work-impact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+}
+
+.impact-label {
+  color: var(--text-dim);
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.impact-value {
+  color: var(--text);
+  font-weight: 700;
+  background: var(--klic-green-dim);
+  padding: 0.25rem 0.55rem;
+  border: 1px solid var(--klic-green-border);
+  border-radius: 2px;
+  font-size: 0.72rem;
+}
+
+.work-cta-link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--klic-green);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-transform: uppercase;
+  transition: transform var(--duration-fast);
+}
+
+.project-card:hover .work-cta-link .arrow {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   CLIENT LOGO MARQUEE (TRUSTED BY CLIENTS SHOWCASE)
+   -------------------------------------------------------------------------- */
+.client-marquee-section {
+  padding: 3.5rem 0;
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-hairline);
+  position: relative;
+  overflow: hidden;
+}
+
+.client-marquee-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.marquee-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.marquee-track-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 1rem 0;
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  width: max-content;
+  animation: logoMarqueeScroll 36s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes logoMarqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  background: var(--card-bg-elevated);
+  border: 1px solid var(--border-hairline);
+  border-radius: 4px;
+  flex-shrink: 0;
+  opacity: 0.75;
+  transition: opacity 0.35s, transform 0.35s, border-color 0.35s;
+}
+
+.marquee-logo-item:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  border-color: var(--klic-green-border);
+}
+
+.marquee-logo-item img {
+  height: 38px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  color: var(--text);
 }
 
 /* --------------------------------------------------------------------------
@@ -923,6 +1212,27 @@
   }
   .project-card.span-6 {
     grid-column: span 1;
+  }
+  .client-logo-stage {
+    min-height: 180px;
+    padding: 2.25rem 1.25rem;
+  }
+  .client-logo-stage .stage-badge {
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 0.62rem;
+    padding: 0.2rem 0.5rem;
+  }
+  .client-logo-img {
+    max-width: 220px;
+  }
+  .work-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .work-cta-link {
+    margin-top: 0.25rem;
   }
   .project-info {
     padding: 1.25rem 1.25rem 1.5rem;
