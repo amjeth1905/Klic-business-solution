@@ -125,17 +125,24 @@
   // 03. Active Navigation Links
   // --------------------------------------------------------------------------
   function initActiveNavLinks() {
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    let path = window.location.pathname.replace(/\/+$/, '') || '/';
+    let currentSlug = path.split('/').pop() || 'index';
+    currentSlug = currentSlug.replace(/\.html$/, '') || 'index';
+    if (path === '' || path === '/') currentSlug = 'index';
+
     const desktopLinks = document.querySelectorAll('.nav-desktop .nav-link');
     const mobileLinks = document.querySelectorAll('.mobile-nav-links .mobile-nav-link');
 
     const updateLink = (link) => {
-      const href = link.getAttribute('href');
-      if (
-        href === currentPath ||
-        (currentPath === '' && href === 'index.html') ||
-        (currentPath === 'index.html' && href === './')
-      ) {
+      const rawHref = link.getAttribute('href') || '';
+      let linkPath = rawHref.split('#')[0].split('?')[0].replace(/\/+$/, '');
+      let linkSlug = linkPath.split('/').pop() || 'index';
+      linkSlug = linkSlug.replace(/\.html$/, '') || 'index';
+      if (linkPath === '' || linkPath === '/' || rawHref === '/' || rawHref === './') {
+        linkSlug = 'index';
+      }
+
+      if (currentSlug === linkSlug) {
         link.classList.add('active');
       } else {
         link.classList.remove('active');
